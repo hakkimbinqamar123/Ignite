@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>User Profile</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+  <style>
+    .button {
+      text-align: center;
+      align-items: center;
+  display: inline-block;
+  padding: 10px 20px;
+  margin-right: 10px;
+  text-decoration: none;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.button:last-child {
+  margin-right: 0; /* Removes margin from the last button */
+}
+
+  </style>
+</head>
+
+<body>
+  <section class="vh-100" style="background-color: #f4f5f7;">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col col-lg-6 mb-4 mb-lg-0">
+          <div class="card mb-3" style="border-radius: .5rem;">
+            <div class="row g-0">
+              <div class="col-md-4 gradient-custom text-center text-white"
+                style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp"
+                  alt="Avatar" class="img-fluid my-5" style="width: 80px;" />
+                <h5>{{up.username}}</h5>
+                <p></p>
+                <i class="far fa-edit mb-5"></i>
+              </div>
+              <div class="col-md-8">
+                <div class="card-body p-4">
+                  <h6>Information</h6>
+                  <form method="post">
+                    {% csrf_token %}
+                    <hr class="mt-0 mb-4">
+                    <div class="row pt-1">
+                      <div class="col-12 col-lg-6 mb-3">
+                        {% for profile in jud %}
+                        <h6>Name</h6>
+                        <input type="text" class="form-control" id="username" name="username" value="{{up.username}}">
+                      </div>
+                      <div class="col-12 col-lg-6 mb-3">
+                        <h6>Email</h6>
+                        <input type="text" class="form-control" id="email" name="email" value="{{up.email}}">
+                      </div>
+                    </div>
+                    <div class="row pt-1">
+                      <div class="col-12 col-lg-6 mb-3">
+                        <h6>Phone</h6>
+                        <input type="text" class="form-control" id="email" name="phone" value="{{up.phone}}">
+                      </div>
+                      <div class="col-12 col-lg-6 mb-3">
+                        <h6>Qualification</h6>
+                        <input type="text" class="form-control" id="qualification" name="qualification" value="{{up.qualification}}">
+                      </div>
+                    </div>
+                    <div class="row pt-1">
+                      <div class="col-12 col-lg-6 mb-3">
+                        <h6>Password</h6>
+                        <input type="text" class="form-control" id="password" name="password" value="{{up.password}}">
+                      </div>
+                            
+                    
+                    </div>
+                    <button type="submit" class="button">Save Changes</button>
+                    <button class="button"><a href="judgehome" style="text-decoration: none; color: inherit;">Home</a></button>
+                  </form>
+                  <div class="d-flex justify-content-start">
+                    {% endfor %}
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- Font Awesome JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/js/all.min.js"></script>
+</body>
+
+</html>
+

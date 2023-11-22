@@ -1,0 +1,242 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <title>Lugx Gaming - Product Detail</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="{% static 'ignite/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'ignite/assets/css/fontawesome.css' %}">
+<link rel="stylesheet" href="{% static 'ignite/assets/css/templatemo-lugx-gaming.css' %}">
+<link rel="stylesheet" href="{% static 'ignite/assets/css/owl.css' %}">
+<link rel="stylesheet" href="{% static 'ignite/assets/css/animate.css' %}">
+
+  <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+
+    .container1 {
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #343a40;
+    }
+
+    .form-control {
+      border-radius: 0;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    .btn-primary {
+      background-color: #007bff;
+      border-color: #007bff;
+    }
+
+    .btn-primary:hover {
+      background-color: #0069d9;
+      border-color: #0062cc;
+    }
+
+    .btn-primary:focus,
+    .btn-primary.focus {
+      box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
+    }
+
+    .form-group {
+      margin-bottom: 40px;
+    }
+    .logo-image {
+        width: 100px; /* Adjust the width as per your requirement */
+        height: 50px; /* This will maintain the aspect ratio */
+        
+    }
+  </style>
+
+<script>
+  function validateForm() {
+    // Get form input values
+    var username = document.forms["myForm"]["username"].value;
+    var password = document.forms["myForm"]["password"].value;
+    var college = document.forms["myForm"]["college"].value;
+    var id_card = document.forms["myForm"]["id_card"].value;
+    var email = document.forms["myForm"]["email"].value;
+    var phone = document.forms["myForm"]["phone"].value;
+  
+    // Check if required fields are filled
+    if (username == "" || password == "" || college == "" || email == "" || phone == "") {
+      alert("Please fill in all required fields.");
+      return false;
+    }
+  
+    // Check if phone number is valid
+    var phone_regex = /^\d{10}$/;
+    if (!phone_regex.test(phone) || /^0{10}$/.test(phone)) {
+      alert("Please enter a valid phone number.");
+      return false;
+    }
+  
+    // Check if email is valid
+    var email_regex = /^\S+@\S+\.\S+$/;
+    if (!email_regex.test(email)) {
+      alert("Please enter a valid email address.");
+      return false;
+    }
+  
+    // Check if file is selected
+    if (id_card == "") {
+      alert("Please upload your ID card.");
+      return false;
+    }
+  
+    // If all checks pass, form is valid
+    return true;
+  }
+</script>
+</head>
+
+<body>
+  <!-- ***** Preloader Start ***** -->
+  <div id="js-preloader" class="js-preloader">
+    <div class="preloader-inner">
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Preloader End ***** -->
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav class="main-nav">
+            <!-- ***** Logo Start ***** -->
+            <a href="" class="logo">
+              <img src="{% static 'ignite/assets/images/ig_logo.jpeg' %}" alt="" class="logo-image">
+            </a>
+            <!-- ***** Logo End ***** -->
+            <!-- ***** Menu Start ***** -->
+            <ul class="nav">
+              <li><a href="/">Home</a></li>
+              <li><a href="results.html">Results</a></li>
+              <li><a href="events" class="active">Event Details</a></li>
+              <li><a href="contact">Contact Us</a></li>
+                              <li><a href="login">Sign In</a></li>
+              <li><a href="registration">Sign Up</a></li>
+            </ul>
+            <a class='menu-trigger'>
+              <span>Menu</span>
+            </a>
+            <!-- ***** Menu End ***** -->
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+
+  <div class="page-heading header-text">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h3>REGISTRATION</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container1">
+   
+    <h1>Registration Page</h1>
+    <h6 style="color: red;">Note: Don't forget to bring your college ID card on the day of program</h6>
+    <br>
+   
+    <form id=regform target=_blank action=registration method=post enctype="multipart/form-data" name="myForm" onsubmit="return validateForm()">
+      {% csrf_token %}
+      <div class="form-group">
+        <label for="username">Username:</label>
+        <input type="text" class="form-control" id="username" name="username" placeholder="Enter username" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" class="form-control" id="password" name="password" placeholder="Enter password" required>
+      </div>
+      <div class="form-group">
+        <label for="college">College:</label>
+        <input type="text" class="form-control" id="college" name="college" placeholder="Enter college" required>
+      </div>
+      <div class="form-group">
+        <label for="id_card">Upload ID Card:</label>
+        <input type="file" class="form-control-file" id="id_card" name="id_card" accept="image/*" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" required>
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone:</label>
+        <input class=form-control id="phone" placeholder=*Phone name=phone>
+      </div>
+      <div class="form-group">
+        <h3>Events you want to register:</h3>
+        <div class="form-group">
+          {% for event in events %}
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="{{ event.event_id }}" name="event_ids" value="{{ event.event_id }}">
+            <label class="form-check-label" for="{{ event.event_id }}">{{ event.pgm_name }}</label>
+          </div>
+          {% endfor %}
+        </div>
+        
+      <button id="register" type="submit" class="btn btn-primary">Register</button>
+      
+    </form>
+  </div>
+  <h4><font color="blue" style="text-align: center;">{{msg}}</font></h4>
+  <h4><font color="red" style="text-align: center;">{{msg1}}</font></h4>
+</div>
+  
+  <footer>
+    <div class="container">
+      <div class="col-lg-12">
+        <p>© 2048 Ignite Marian college. &nbsp;&nbsp;<a rel="nofollow" href="https://templatemo.com" target="_blank">Marian</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+  <script src="{% static 'ignite/vendor/jquery/jquery.min.js' %}"></script>
+<script src="{% static 'ignite/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'ignite/assets/js/isotope.min.js' %}"></script>
+<script src="{% static 'ignite/assets/js/owl-carousel.js' %}"></script>
+<script src="{% static 'ignite/assets/js/counter.js' %}"></script>
+<script src="{% static 'ignite/assets/js/custom.js' %}"></script>
+</body>
+
+</html>
+
+

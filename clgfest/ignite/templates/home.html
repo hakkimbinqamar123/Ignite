@@ -1,0 +1,299 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <title>Ignite</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'ignite/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="{% static 'ignite/assets/css/fontawesome.css' %}">
+    <link rel="stylesheet" href="{% static 'ignite/assets/css/templatemo-lugx-gaming.css' %}">
+    <link rel="stylesheet" href="{% static 'ignite/assets/css/owl.css' %}">
+    <link rel="stylesheet" href="{% static 'ignite/assets/css/animate.css' %}">
+    <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+<!--
+
+TemplateMo 589 lugx gaming
+
+https://templatemo.com/tm-589-lugx-gaming
+
+-->
+<style>
+  /* Add custom styles for the pop-up image here */
+  .image-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 9999;
+  }
+
+  .image-popup img {
+    display: block;
+    max-width: 50%;
+    max-height: 50%;
+    margin: 10% auto;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  }
+
+ 
+    .logo-image {
+        width: 100px; /* Adjust the width as per your requirement */
+        height: 50px; /* This will maintain the aspect ratio */
+        
+    }
+</style>
+
+</style>
+  </head>
+
+<body>
+
+  <!-- ***** Preloader Start ***** -->
+  <div id="js-preloader" class="js-preloader">
+    <div class="preloader-inner">
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Preloader End ***** -->
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="main-nav">
+                    <!-- ***** Logo Start ***** -->
+                    <a href="" class="logo">
+                        <img src="static/ignite/assets/images/ig_logo.jpeg" alt="" class="logo-image">
+                    </a>
+                    <!-- ***** Logo End ***** -->
+                    <!-- ***** Menu Start ***** -->
+                    <ul class="nav">
+                      <li><a href="" >Home</a></li>
+                      <li><a href="events">Events</a></li>
+                      <li><a href="results">Results</a></li>
+                      <li><a href="contact">Contact Us</a></li>
+                      <li><a href="login">Sign In</a></li>
+                      <li><a href="registration">Sign Up</a></li>
+
+                  </ul>   
+                    <a class='menu-trigger'>
+                        <span>Menu</span>
+                    </a>
+                    <!-- ***** Menu End ***** -->
+                </nav>
+            </div>
+        </div>
+    </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+
+  <div class="main-banner">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 align-self-center">
+          <div class="caption header-text">
+            <h6>Welcome to Marian </h6>
+            <h2>BEST TECH FEST EVER!</h2>
+            <p>Ignite is a highly anticipated annual tech fest organized by Marian College Kuttikanam. As one of the premier technical events in the region, Ignite brings together students, tech enthusiasts, and industry professionals for a vibrant celebration of technology and innovation.</p>
+
+          </div>
+        </div>
+        <div class="col-lg-4 offset-lg-2">
+          <div class="right-image">
+            <img src="static/ignite/assets/images/ignite.jpg" alt="">
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="section trending">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="section-heading">
+            <h6>Trending</h6>
+            <h2>Trending Games</h2>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="main-button">
+            <a href="events">View All</a>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="item">
+            <div class="thumb">
+              <img src="static/ignite/assets/images/tressurehunt.png" alt="">
+
+            </div>
+            <div class="down-content">
+              <span class="category">Action</span>
+              <h4>Tressure Hunt</h4>
+              
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="item">
+            <div class="thumb">
+             <img src="static/ignite/assets/images/project.jpg" alt="">
+
+            </div>
+            <div class="down-content">
+              <span class="category">Action</span>
+              <h4>Project Expo</h4>
+             
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="item">
+            <div class="thumb">
+              <img src="static/ignite/assets/images/quiz.jpg" alt="">
+
+            </div>
+            <div class="down-content">
+              <span class="category">Action</span>
+              <h4>Programming Quiz</h4>
+              
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="item">
+            <div class="thumb">
+              <img src="static/ignite/assets/images/coding.png" alt="">
+
+            </div>
+            <div class="down-content">
+              <span class="category">Action</span>
+              <h4>Coding</h4>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section categories">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <div class="section-heading">
+            <h6>Sponsers</h6>
+            <h2>Event Sponsers</h2>
+          </div>
+        </div>
+        <div class="col-lg col-sm-6 col-xs-12">
+          <div class="item">
+            <h4>SS</h4>
+            <div class="thumb" >
+              <a href="#" class="sponsor-image-link" data-image-src="static/ignite/assets/images/a.png">
+                <img src="static/ignite/assets/images/a.png" alt=""></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg col-sm-6 col-xs-12">
+          <div class="item">
+            <h4>Icons</h4>
+            <div class="thumb">
+              <a href="#" class="sponsor-image-link" data-image-src="static/ignite/assets/images/b.png">
+                <img src="static/ignite/assets/images/b.png" alt=""></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg col-sm-6 col-xs-12">
+          <div class="item">
+            <h4>NCC</h4>
+            <div class="thumb">
+              <a href="#" class="sponsor-image-link" data-image-src="static/ignite/assets/images/c.png">
+                <img src="static/ignite/assets/images/c.png" alt=""></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg col-sm-6 col-xs-12">
+          <div class="item">
+            <h4>Ga Cibo</h4>
+            <div class="thumb">
+              <a href="#"class="sponsor-image-link" data-image-src="static/ignite/assets/images/d.png">
+                <img src="static/ignite/assets/images/d.png" alt=""></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg col-sm-6 col-xs-12">
+          <div class="item">
+            <h4>Centro</h4>
+            <div class="thumb">
+              <a href="#" class="sponsor-image-link" data-image-src="static/ignite/assets/images/e.png">
+                <img src="static/ignite/assets/images/e.png" alt=""></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="image-popup">
+    <img src="" alt="" class="popup-image">
+  </div>
+  <footer>
+    <div class="container">
+      <div class="col-lg-12">
+        <p>Copyright © 2048 IGNITE Marian college kuttikanam. &nbsp;&nbsp; <a rel="nofollow" href="https://templatemo.com" target="_blank">Design: TemplateMo</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+  <script src="static/ignite/vendor/jquery/jquery.min.js"></script>
+  <script src="static/ignite/vendor/bootstrap/js/bootstrap.min.js"></script>
+  <script src="static/ignite/assets/js/isotope.min.js"></script>
+  <script src="static/ignite/assets/js/owl-carousel.js"></script>
+  <script src="static/ignite/assets/js/counter.js"></script>
+  <script src="static/ignite/assets/js/custom.js"></script>
+
+
+
+  <script>
+    // JavaScript code for handling the pop-up image
+    $(document).ready(function () {
+      $('.sponsor-image-link').click(function (e) {
+        e.preventDefault();
+        var imageSrc = $(this).data('image-src');
+        $('.popup-image').attr('src', imageSrc);
+        $('.image-popup').fadeIn();
+      });
+
+      $('.image-popup').click(function () {
+        $('.image-popup').fadeOut();
+      });
+    });
+  </script>
+  </body>
+</html>

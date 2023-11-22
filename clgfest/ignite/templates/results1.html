@@ -1,0 +1,201 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+ 
+
+    <link href="{% static 'ignite/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'ignite/assets/css/fontawesome.css' %}">
+<link rel="stylesheet" href="{% static 'ignite/assets/css/templatemo-lugx-gaming.css' %}">
+<link rel="stylesheet" href="{% static 'ignite/assets/css/owl.css' %}">
+<link rel="stylesheet" href="{% static 'ignite/assets/css/animate.css' %}">
+
+    <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<!--
+
+TemplateMo 589 lugx gaming
+
+https://templatemo.com/tm-589-lugx-gaming
+
+-->
+
+          <style>
+    body {
+      background-color: #f8f9fa;
+    }
+
+    .container1 {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #343a40;
+    }
+
+    .table {
+      background-color: #f8f9fa;
+    }
+
+    .table thead th {
+      background-color: #343a40;
+      color: #fff;
+      border-color: #343a40;
+    }
+
+    .table-striped tbody tr:nth-of-type(odd) {
+      background-color: #f1f1f1;
+    }
+
+    .btn-primary {
+      background-color: #007bff;
+      border-color: #007bff;
+    }
+
+    .btn-primary:hover {
+      background-color: #0069d9;
+      border-color: #0062cc;
+    }
+
+    .btn-primary:focus,
+    .btn-primary.focus {
+      box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
+    }
+  </style>
+  </head>
+
+<body>
+
+  <!-- ***** Preloader Start ***** -->
+  <div id="js-preloader" class="js-preloader">
+    <div class="preloader-inner">
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Preloader End ***** -->
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="main-nav">
+                    <!-- ***** Logo Start ***** -->
+                    <a href="" class="logo">
+                      <img src="{% static 'ignite/assets/images/ig_logo.png' %}" alt="" style="width: 158px;">
+
+                    </a>
+                    <!-- ***** Logo End ***** -->
+                    <!-- ***** Menu Start ***** -->
+                    <ul class="nav">
+                      <li><a href="">Home</a></li>
+                      <li><a href="results" >Results</a></li>
+                      <li><a href="events">Event Details</a></li>
+                      <li><a href="contact">Contact Us</a></li>
+                      <li><a href="login">Sign In</a></li>
+                        <li><a href="registration">Sign Up</a></li>
+                  </ul>
+                    <a class='menu-trigger'>
+                        <span>Menu</span>
+                    </a>
+                    <!-- ***** Menu End ***** -->
+                </nav>
+            </div>
+        </div>
+    </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+
+  <div class="page-heading header-text">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h3>RESULTS</h3>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="container1">
+    <h1>{{ event.pgm_name }}</h1>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Position</th>
+          <th>Grade</th>
+          
+          <th>Name</th>
+          <th>College</th>
+          
+          
+        </tr>
+      </thead>
+      <tbody>
+        {% for result in r %}
+        <tr>
+          <td>{{ result.position }}</td>
+          <td>{{ result.grade }}</td>
+          {% for student in students %}  
+          {% if student.candidate_id == result.candidate_id %} 
+           
+             <td>{{ student.username }}</td> 
+          <td>{{ student.college }}</td>
+          {% endif %}
+          {% endfor %}
+          {% endfor %}
+        </tr>
+       
+      </tbody>
+    </table>
+
+  
+
+    <div class="text-center">
+      <a href="results" class="btn btn-primary">View Another Results</a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="col-lg-12">
+        <p>Copyright © 2048 Ignite Marian college Kuttikanam. All rights reserved. &nbsp;&nbsp; <a rel="nofollow" href="https://templatemo.com" target="_blank">Design: TemplateMo</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+  <script src="{% static 'ignite/vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'ignite/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'ignite/assets/js/isotope.min.js' %}"></script>
+  <script src="{% static 'ignite/assets/js/owl-carousel.js' %}"></script>
+  <script src="{% static 'ignite/assets/js/counter.js' %}"></script>
+  <script src="{% static 'ignite/assets/js/custom.js' %}"></script>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  </body>
+</html>

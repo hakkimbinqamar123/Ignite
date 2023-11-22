@@ -1,0 +1,132 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <title>Lugx Gaming - Product Detail</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="{% static 'ignite/vendor/bootstrap/css/bootstrap.min.css' %}">
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="{% static 'ignite/assets/css/fontawesome.css' %}">
+    <link rel="stylesheet" href="{% static 'ignite/assets/css/templatemo-lugx-gaming.css' %}">
+    <link rel="stylesheet" href="{% static 'ignite/assets/css/owl.css' %}">
+    <link rel="stylesheet" href="{% static 'ignite/assets/css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'ignite/vendor/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+<!--
+
+TemplateMo 589 lugx gaming
+
+https://templatemo.com/tm-589-lugx-gaming
+
+-->
+<style>
+  /* Add custom styles for the pop-up image here */
+  .image-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 9999;
+  }
+
+  .image-popup img {
+    display: block;
+    max-width: 50%;
+    max-height: 50%;
+    margin: 10% auto;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  }
+
+ 
+    .logo-image {
+        width: 100px; /* Adjust the width as per your requirement */
+        height: 50px; /* This will maintain the aspect ratio */
+        
+    }
+</style>
+  </head>
+
+<body> 
+
+  <!-- ***** Preloader Start ***** -->
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Preloader End ***** -->
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="main-nav">
+                    <!-- ***** Logo Start ***** -->
+                    <a href="" class="logo">
+                      <img src="static/ignite/assets/images/ig_logo.jpeg" alt="" class="logo-image">
+                    </a>
+                    <!-- ***** Logo End ***** -->
+                    <!-- ***** Menu Start ***** -->
+                    <ul class="nav">
+                      <li><a href="/judgehome">Home</a></li>
+                      <li><a href="/judge_results">Results</a></li>
+                      <li><a href="/judge_events" >Event Details</a></li>
+                      <li><a href="/result_upload">Upload Results</a></li>
+                      <li><a href="/judge_profile">Profile</a></li>
+                      <li><a href=/logout>Logout</a></li>
+                      
+                        
+                  </ul>
+                    <a class='menu-trigger'>
+                        <span>Menu</span>
+                    </a>
+                    <!-- ***** Menu End ***** -->
+                </nav>
+            </div>
+        </div>
+    </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+ <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+  <script src="static/ignite/vendor/jquery/jquery.min.js"></script>
+  <script src="static/ignite/vendor/bootstrap/js/bootstrap.min.js"></script>
+  <script src="static/ignite/assets/js/isotope.min.js"></script>
+  <script src="static/ignite/assets/js/owl-carousel.js"></script>
+  <script src="static/ignite/assets/js/counter.js"></script>
+  <script src="static/ignite/assets/js/custom.js"></script>
+
+  <script>
+    // JavaScript code for handling the pop-up image
+    $(document).ready(function () {
+      $('.sponsor-image-link').click(function (e) {
+        e.preventDefault();
+        var imageSrc = $(this).data('image-src');
+        $('.popup-image').attr('src', imageSrc);
+        $('.image-popup').fadeIn();
+      });
+
+      $('.image-popup').click(function () {
+        $('.image-popup').fadeOut();
+      });
+    });
+  </script>
+
+  </body>
+</html>
